@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Skelo Seed Sale</title>
+    <link rel="stylesheet" href="/styles.css">
+</head>
+<body>
+    <div class="container">
+        <h1>Skelo Seed Sale</h1>
+        <% if (message) { %>
+            <p class="message"><%= message %></p>
+        <% } %>
+        <form action="/buy" method="POST">
+            <label for="walletAddress">Deine Wallet-Adresse:</label>
+            <input type="text" id="walletAddress" name="walletAddress" required>
+
+            <label for="solAmount">Menge an SOL zu senden:</label>
+            <input type="number" step="0.001" id="solAmount" name="solAmount" min="0.025" required>
+
+            <button type="submit">Token kaufen</button>
+        </form>
+        <p class="info">
+            Sende mindestens <strong>0,025 SOL</strong> an die Seed Sale Wallet-Adresse:<br>
+            <strong>32jVXUfnQYdRxbYCs5mTaaiJkkcoJ9WfjDGyoQnffr1a</strong>
+        </p>
+    </div>
+</body>
+</html>
+
